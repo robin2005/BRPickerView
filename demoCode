@@ -1,0 +1,43 @@
+-(void)pop {
+    BRDatePickerView *datePickerView = [[BRDatePickerView alloc]init];
+    datePickerView.pickerMode = BRDatePickerModeHM;
+    datePickerView.title = @"时长";
+    datePickerView.selectDate = [NSDate date];
+    datePickerView.isAutoSelect = YES;
+    datePickerView.customUnit = @{@"hour": @"小时", @"minute": @"分钟"};
+    datePickerView.minDate = [NSDate br_setYear:1949 month:3 day:12];
+    datePickerView.maxDate = [NSDate date];
+    datePickerView.resultBlock = ^(NSDate *selectDate, NSString *selectValue) {
+      
+    };
+    // 自定义弹框样式
+    BRPickerStyle *customStyle = [BRPickerStyle pickerStyleWithThemeColor:[UIColor darkGrayColor]];
+    customStyle.cancelBorderStyle = BRBorderStyleNone;
+    customStyle.doneBorderStyle = BRBorderStyleNone;
+    customStyle.doneColor = [UIColor clearColor];
+    customStyle.doneTextColor = [UIColor blueColor];
+    datePickerView.pickerStyle = customStyle;
+    [datePickerView show];
+}
+ 
+
+-(void)popTime {
+    BRDatePickerView *datePickerView = [[BRDatePickerView alloc]init];
+    datePickerView.pickerMode = BRDatePickerModeYMDHM;
+    datePickerView.title = @"时长";
+    datePickerView.selectDate = [NSDate date];
+    datePickerView.isAutoSelect = YES;
+    datePickerView.minDate = [NSDate br_setYear:1949 month:3 day:12];
+    datePickerView.maxDate = [NSDate date];
+    datePickerView.resultBlock = ^(NSDate *selectDate, NSString *selectValue) {
+      
+    };
+    // 自定义弹框样式
+    BRPickerStyle *customStyle = [BRPickerStyle pickerStyleWithThemeColor:[UIColor darkGrayColor]];
+    customStyle.cancelBorderStyle = BRBorderStyleNone;
+    customStyle.doneBorderStyle = BRBorderStyleNone;
+    customStyle.doneColor = [UIColor clearColor];
+    customStyle.doneTextColor = [UIColor blueColor];
+    datePickerView.pickerStyle = customStyle;
+    [datePickerView show]; 
+}
